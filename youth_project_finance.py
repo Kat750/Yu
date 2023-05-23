@@ -24,5 +24,6 @@ df1.to_sql('income', engine, if_exists='replace', index=False)
 
 column_names = list(df1.columns)
 print(column_names)
+print('test')
 
 

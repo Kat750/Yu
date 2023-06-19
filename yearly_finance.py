@@ -3,9 +3,19 @@ import psycopg2
 from sqlalchemy import create_engine
 print('test')
 
-excel_file = '/Users/katherinecunniffe/Desktop/pandas_project/youth_centre_project/youth_centre/income.xlsx'
-df1 = pd.read_excel(excel_file)
-print(df1.head())
+#read in excel file income_alias with six sheets
+excel_file = '/Users/katherinecunniffe/Desktop/pandas_project/youth_centre_project/youth_centre/income_alias.xlsx'
+
+excel_data = pd.read_excel(excel_file, sheet_name=None)
+df2017_18 = excel_data['2017-18']
+df2018_19 = excel_data['2018-19']
+df2019_20 = excel_data['2019-20']
+df2020_21 = excel_data['2020-21']
+df2021_22 = excel_data['2021-22']
+
+
+#test
+print(df2017_18.head())
 
 try:
     pgconn = psycopg2.connect(
@@ -20,9 +30,9 @@ except:
 conn_string = f'postgresql+psycopg2://postgres:postgres@localhost/postgres'
 engine = create_engine(conn_string)
 
-df1.to_sql('income', engine, if_exists='replace', index=False)
+df2017_18.to_sql('2017-18', engine, if_exists='replace', index=False)
 
-column_names = list(df1.columns)
+column_names = list(df2017_18.columns)
 print(column_names)
 
 

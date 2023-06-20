@@ -69,6 +69,6 @@ plt.show()
 #how much in total is raised each year
 #which source IDs donate every year, then via Fundraiser or Direct
 #list top largest donator source ID in descending order for each year, what proportion of these are via Fundraiser, are any of these in multible years
-
+#visualise data
 
 

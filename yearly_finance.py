@@ -35,4 +35,10 @@ df2017_18.to_sql('2017-18', engine, if_exists='replace', index=False)
 column_names = list(df2017_18.columns)
 print(column_names)
 
+#how much in total is raised each year via Fundraiser
+#how much in total is raised each year Direct
+#how much in total is raised each year
+#which source IDs donate every year, then via Fundraiser or Direct
+#list top largest donator source ID in descending order for each year, what proportion of these are via Fundraiser, are any of these in multible years
+
 
